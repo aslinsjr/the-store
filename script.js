@@ -33,33 +33,36 @@ function playerMoviment() {
 
     document.addEventListener("keydown", (e) => {
 
-        const playerPositionX = player.getBoundingClientRect().x
-        const playerPositionY = player.getBoundingClientRect().y
 
-        if (e.key === "ArrowLeft" || e.key === "a") {
-            player.style.transform = "rotatey(180deg)";
-            leftValue = leftValue - 2
+        if (background.className.includes("hide")) {
+
+            const playerPositionX = player.getBoundingClientRect().x
+            const playerPositionY = player.getBoundingClientRect().y
+
+            if (e.key === "ArrowLeft" || e.key === "a") {
+                player.style.transform = "rotatey(180deg)";
+                leftValue = leftValue - 2
+            }
+            if (e.key === "ArrowDown" || e.key === "s") {
+                topValue = topValue + 2
+            }
+            if (e.key === "ArrowRight" || e.key === "d") {
+                player.style.transform = "rotatey(0deg)";
+                leftValue = leftValue + 2
+            }
+            if (e.key === "ArrowUp" || e.key === "w") {
+                topValue = topValue - 2
+            }
+
+
+            playerContainer.style.left = `${leftValue}vw`
+            playerContainer.style.top = `${topValue}vh`
+
+
+            console.log(e.key)
+
+
         }
-        if (e.key === "ArrowDown" || e.key === "s") {
-            topValue = topValue + 2
-        }
-        if (e.key === "ArrowRight" || e.key === "d") {
-            player.style.transform = "rotatey(0deg)";
-            leftValue = leftValue + 2
-        }
-        if (e.key === "ArrowUp" || e.key === "w") {
-            topValue = topValue - 2
-        }
-
-
-        playerContainer.style.left = `${leftValue}vw`
-        playerContainer.style.top = `${topValue}vh`
-
-
-        console.log(e.key)
-        
-
-
 
     })
 
