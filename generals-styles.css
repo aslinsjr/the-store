@@ -1,0 +1,19 @@
+:root {
+    --modal-bg: hsl(39, 55%, 54%);
+    --modal-bg-input: hsl(39, 55%, 61%);
+    --modal-border: 0.3rem solid hsl(39.38,60.38%,79.22%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
