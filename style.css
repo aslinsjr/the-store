@@ -68,7 +68,7 @@ input[type="submit"] {
 }
 
 #player {
-    width: 3vw;
+    width: 2.5vw;
     z-index: 1;
     position: absolute;
     cursor:pointer;
