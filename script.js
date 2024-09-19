@@ -10,6 +10,8 @@ const playerId = document.querySelector(".player-id")
 const player = document.querySelector("#player")
 const playerContainer = document.querySelector(".player-container")
 
+const avatar = document.querySelectorAll(".avatar")
+
 function getPlayerName() {
     playerName.addEventListener("change", (e) => {
         playerId.innerHTML = e.target.value
@@ -21,9 +23,19 @@ function printingTemplate() {
     <div class="character-box">
         <button class="character-btn" id="player-00"><img src="./img/player00.gif" alt="Player Image" id="character-00"></button>
         <button class="character-btn" id="player-01"><img src="./img/player01.gif" alt="Player Image" id="character-01"></button>
-    </div>
-`
+    </div>`
+
     nameForm.innerHTML = template
+}
+
+function randomPosition() {
+
+
+    avatar.forEach((element) => {
+
+        element.style.left = (Math.random() * 1000).toFixed(0) + "px"
+        element.style.top = (Math.random() * 100).toFixed(0) + "px"
+    })
 }
 
 function playerMoviment() {
@@ -31,37 +43,49 @@ function playerMoviment() {
     let leftValue = 0
     let topValue = 0
 
-    document.addEventListener("keydown", (e) => {
+    // document.addEventListener("click", (e) => {
 
+    //     let playerPositionX = 0
+    //     let playerPositionY = 0
+
+    //     console.log("x " + e.clientX + " / " + "y " + e.clientY)
+    //     console.log("x " + playerPositionX + " / " + "y " + playerPositionY)
+
+    //     if (background.className.includes("hide")) {
+
+    //         playerPositionX = player.getBoundingClientRect().x
+    //         playerPositionY = player.getBoundingClientRect().y
+
+    //         playerContainer.style.right = `${playerPositionX - e.clientX}px`
+    //         playerContainer.style.bottom = `${playerPositionY - e.clientY}px`
+
+    //     }
+
+
+    // })
+
+    document.addEventListener("keydown", (e) => {
 
         if (background.className.includes("hide")) {
 
-            const playerPositionX = player.getBoundingClientRect().x
-            const playerPositionY = player.getBoundingClientRect().y
-
             if (e.key === "ArrowLeft" || e.key === "a") {
                 player.style.transform = "rotatey(180deg)";
-                leftValue = leftValue - 2
+                leftValue = leftValue - 25
             }
             if (e.key === "ArrowDown" || e.key === "s") {
-                topValue = topValue + 2
+                topValue = topValue + 25
             }
             if (e.key === "ArrowRight" || e.key === "d") {
                 player.style.transform = "rotatey(0deg)";
-                leftValue = leftValue + 2
+                leftValue = leftValue + 25
             }
             if (e.key === "ArrowUp" || e.key === "w") {
-                topValue = topValue - 2
+                topValue = topValue - 25
             }
 
 
-            playerContainer.style.left = `${leftValue}vw`
-            playerContainer.style.top = `${topValue}vh`
-
-
-            console.log(e.key)
-
-
+            playerContainer.style.left = `${leftValue}px`
+            playerContainer.style.top = `${topValue}px`
         }
 
     })
@@ -105,7 +129,11 @@ player.addEventListener("mouseout", () => {
 
 getPlayerName()
 
+randomPosition()
+
 playerMoviment()
+
+
 
 
 

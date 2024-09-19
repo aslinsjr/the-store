@@ -59,7 +59,13 @@ input[type="submit"] {
     left: 500px;
     top: 200px;
     width: 100px;
-   
+}
+
+.avatar {
+    width: 2.5vw;
+    position: absolute;
+    cursor:pointer;
+    transition: 0.2s;
 }
 
 .player-container {
@@ -68,10 +74,9 @@ input[type="submit"] {
 }
 
 #player {
-    width: 2.5vw;
     z-index: 1;
-    position: absolute;
-    cursor:pointer;
+    width: 2.5vw;
+    cursor:pointer; 
 }
 
 .player-id {
