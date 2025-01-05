@@ -61,7 +61,10 @@ function app() {
     // Custo base de 1 funcionário -0.001
     revenueCoefficient = revenueCoefficient - 0.001
 
-    renderMap([-8.1123297, -34.9039098], 18)
+    // Custo de aluguel 5000/mês  -0.0019
+    revenueCoefficient = revenueCoefficient - 0.0019
+
+    renderMap([-8.1185,-34.9046689], 18.3)
 
     setInterval(() => {
         getDate()

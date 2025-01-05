@@ -1,7 +1,13 @@
 :root {
-    --modal-bg: hsl(39, 55%, 54%);
+    --modal-bg:#252323 ;
     --modal-bg-input: hsl(39, 55%, 61%);
-    --modal-border: 0.3rem solid hsl(39.38,60.38%,79.22%);
+    --modal-border: 0.3rem solid  #70798C;
+    --text-color: #f2efe9;
+    --second-text-color: #dad2bc;
+
+    color-scheme: dark light;
+    background-color: var(--modal-bg);
+    color: var((--text-color));
 }
 
 * {
@@ -26,7 +32,6 @@ header {
     align-items: center;
     justify-content: space-between;
     border: 1px solid black;
-    background-color: var(--modal-bg);
 }
 
 .header-table {
@@ -38,17 +43,26 @@ header {
 }
 
 #map {
-    
     width: 100%;
     height: 100%;
     z-index: 0;
 }
 
-.modal {
+.modal-bg {
+    width: 100%;
+    height: 100vh;
     position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background-color: var(--modal-bg);
     width: 350px;
     height: 200px;
-    background-color: var(--modal-bg);
     border: var(--modal-border);
     z-index: 2;
     padding: 1rem;
@@ -99,7 +113,7 @@ input[type="submit"] {
 .avatar {
     width: 2.5vw;
     position: absolute;
-    cursor:pointer;
+    cursor: pointer;
     transition: 0.2s;
 }
 
@@ -111,12 +125,11 @@ input[type="submit"] {
 #player {
     z-index: 1;
     width: 2.5vw;
-    cursor:pointer; 
+    cursor: pointer;
 }
 
 .player-id {
     text-align: center;
-    background-color: var(--modal-bg);
     border: var(--modal-border);
     position: absolute;
     padding: 2px;
@@ -131,4 +144,16 @@ input[type="submit"] {
 
 .show {
     display: block;
+}
+
+@media (prefers-color-scheme: light) {
+
+    :root {
+        --modal-bg: #f2efe9;
+        --modal-bg-input: hsl(39, 55%, 61%);
+        --modal-border: 0.3rem solid #dad2bc;
+        --text-color: #252323;
+        --second-text-color: #70798C;
+    }
+
 }
