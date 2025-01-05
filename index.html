@@ -7,7 +7,6 @@
     <title>The Store</title>
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="generals-styles.css">
     <!-- Scripts -->
     <script src="script.js" defer></script>
     <!-- Leaflet CSS -->
@@ -19,24 +18,31 @@
 </head>
 
 <body>
-    <!-- <img class="store" src="img/store01.png" alt="Store Img">
-    <img class="avatar" src="img/npc01.gif" alt="NPC 01">
-    <img class="avatar" src="img/npc02.gif" alt="NPC 02">
-    <img class="avatar" src="img/npc03.gif" alt="NPC 03">
-    <div class="player-container">
-        <span class="player-id"></span>
-        <img id="player" src="img/player01.gif" alt="Player Gif">
-    </div> -->
+    <header>
+        <div class="header-table" id="store-name-box">
+            <span>Nome da loja</span>
+            <span id="store-name"></span>
+        </div>
+        <div class="header-table" id="total-value-box">
+            <span>Patrimônio</span>
+            <span id="total-value"></span>
+        </div>
+        <div class="header-table" id="cashier-value-box">
+            <span>Caixa</span>
+            <span id="cashier-value"></span>
+        </div>
+        <div class="header-table" id="cashier-value-box">
+            <span>Receita/Despesas</span>
+            <span id="cashier-value"></span>
+        </div>
+        <div class="header-table" id="date-box">
+            <span id="day"></span>
+            <span id="date"></span>
+            <span id="clock"></span>
+        </div>
+    </header>
     <div id="map"></div>
     <div class="modal">
-        <!-- <form class="form-name">
-            <h2>Olá</h2>
-            <div class="input-control">
-                <label for="player-name">informe o nome do seu personagem</label>
-                <input type="text" name="player-name" id="player-name">
-            </div>
-            <input id="submit-btn" type="submit">
-        </form> -->
         <h1>The Store</h1>
         <p>Simulador de empreendedorismo</p>
     </div>
